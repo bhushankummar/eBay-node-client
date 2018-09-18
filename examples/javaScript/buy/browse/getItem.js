@@ -5,7 +5,7 @@ var clientSecret = process.env.EBAY_CLIENT_SECRET || 'YOUR_SECRET';
 
 var eBay = require('../../../../lib/eBay-node-client')(clientId, clientSecret);
 
-var categoryRequest = async function () {
+var browseRequest = async function () {
     try {
         var token = await eBay.application.getOAuthToken({
             grant_type: 'client_credentials',
@@ -16,10 +16,8 @@ var categoryRequest = async function () {
 
     }
 
-    var data = {
-        marketplace_id: 'EBAY_IN'
-    };
-    eBay.taxonomy.getDefaultCategoryTreeId(data, function (error, response) {
+    var itemId = 'v1|110329773707|410089528845';
+    eBay.browse.getItem(itemId, function (error, response) {
         if (error) {
             console.log('error ', error);
             return;
@@ -28,4 +26,4 @@ var categoryRequest = async function () {
     });
 };
 
-categoryRequest();
+browseRequest();

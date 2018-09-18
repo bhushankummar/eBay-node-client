@@ -3,7 +3,7 @@
 var clientId = process.env.EBAY_CLIENT_ID || 'YOUR_KEY';
 var clientSecret = process.env.EBAY_CLIENT_SECRET || 'YOUR_SECRET';
 
-var eBay = require('../../../../lib/eBay-node-client')(clientId, clientSecret, true);
+var eBay = require('../../../../lib/eBay-node-client')(clientId, clientSecret);
 
 var categoryRequest = async function () {
     try {
@@ -17,9 +17,11 @@ var categoryRequest = async function () {
     }
 
     var categoryTreeId = 203;
-    var search_terms = 'abc';
 
-    eBay.taxonomy.getCategorySuggestions(categoryTreeId, search_terms, function (error, response) {
+    var data = {
+        'q': 'abc'
+    };
+    eBay.taxonomy.getCategorySuggestions(categoryTreeId, data, function (error, response) {
         if (error) {
             console.log('error ', error);
             return;
