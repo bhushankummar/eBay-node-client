@@ -1,12 +1,22 @@
 'use strict';
 
-// var accessKey = process.env.AWS_ACCESS_KEY_ID || 'YOUR_KEY';
-// var accessSecret = process.env.AWS_SECRET_ACCESS_KEY || 'YOUR_SECRET';
+var clientId = process.env.EBAY_CLIENT_ID || 'YOUR_KEY';
+var clientSecret = process.env.EBAY_CLIENT_SECRET || 'YOUR_SECRET';
 
-var eBay = require('../../../../lib/eBay-node-client')('', true);
+var eBay = require('../../../../lib/eBay-node-client')(clientId, clientSecret, true);
 
-var feedRequest = function () {
-    eBay.taxonomy.getDefaultCategoryTreeId({}, function (error, response) {
+var feedRequest = async function () {
+    try {
+        var token = await eBay.application.getOAuthToken({
+            grant_type: 'client_credentials',
+            scope: 'https://api.ebay.com/oauth/api_scope'
+        });
+        eBay.setToken(token.access_token);
+    } catch (exeption) {
+
+    }
+
+    eBay.taxonomy.getDefaultCategoryTreeId('EBAY_IN', function (error, response) {
         if (error) {
             console.log('error ', error);
             return;
