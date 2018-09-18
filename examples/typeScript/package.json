@@ -1,0 +1,14 @@
+{
+  "name": "eBay-node-client",
+  "version": "1.0.0",
+  "description": "eBay",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^8.0.53",
+    "@types/es6-promise": "0.0.33",
+    "babel-eslint": "^8.0.1",
+    "babel-preset-node6": "^11.0.0",
+    "eBay-node-client": "*"
+  },
+  "devDependencies": {}
+}
