@@ -1,0 +1,84 @@
+{
+  "name": "eBay-node-client",
+  "version": "0.0.1",
+  "description": "eBay API wrapper",
+  "keywords": [
+    "eBay",
+    "eBay Account API",
+    "eBay Inventory API",
+    "eBay Compliance API",
+    "eBay Fulfillment API",
+    "eBay Marketing API",
+    "eBay Analytics API",
+    "eBay Metadata API",
+    "eBay Browse API",
+    "eBay Feed API",
+    "eBay Marketing API",
+    "eBay Order API",
+    "eBay Marketplace Insights API",
+    "eBay Taxonomy API",
+    "eBay Catalog API",
+    "eBay Translation API",
+    "eBay Analytics API",
+    "eBay Finding API",
+    "eBay Shopping API",
+    "eBay Merchandising API",
+    "eBay Trading API",
+    "eBay Product Services",
+    "eBay Client Alerts API",
+    "ebay-node",
+    "eBay-node-api",
+    "eBay-node-client",
+    "eBay-typescript",
+    "eBay-await",
+    "eBay-async",
+    "eBay-promises",
+    "eBay-products",
+    "eBay-sellers",
+    "eBay-orders",
+    "eBay-finances",
+    "eBay-inventory",
+    "eBay-shipment",
+    "eBay-api",
+    "eBay-sdk",
+    "eBay-client",
+    "eBay-node-api",
+    "eBay-node"
+  ],
+  "homepage": "https://github.com/bhushankumarl/eBay-node-client",
+  "author": "Bhushankumar Lilapara<bhushankumar.lilapara@gmail.com>",
+  "contributors": [
+    "Bhushankumar Lilapara (bhushankumar.lilapara@gmail.com)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bhushankumarl/eBay-node-client.git"
+  },
+  "bugs:": "https://github.com/bhushankumarl/eBay-node-client/issues",
+  "engines": {
+    "node": ">= v0.10.0"
+  },
+  "main": "lib/eBay-node-client.js",
+  "devDependencies": {
+    "jshint": "^2.9.5"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "chai": "^4.1.2",
+    "debug": "^3.1.0",
+    "fast-csv": "^2.4.0",
+    "fs-extra": "^5.0.0",
+    "iconv-lite": "^0.4.23",
+    "lodash": "^4.17.4",
+    "mocha": "^5.2.0",
+    "object-assign": "^4.1.0",
+    "qs": "^6.5.1",
+    "xml2js": "^0.4.19"
+  },
+  "license": "MIT",
+  "scripts": {
+    "lint": "jshint ./",
+    "test": "npm run lint",
+    "test.mocha": "npm run lint && mocha"
+  }
+}
