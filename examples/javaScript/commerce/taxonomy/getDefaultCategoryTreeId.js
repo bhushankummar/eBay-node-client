@@ -16,7 +16,10 @@ var categoryRequest = async function () {
 
     }
 
-    eBay.taxonomy.getDefaultCategoryTreeId('EBAY_IN', function (error, response) {
+    var data = {
+        marketplace_id: 'EBAY_IN'
+    };
+    eBay.taxonomy.getDefaultCategoryTreeId(data, function (error, response) {
         if (error) {
             console.log('error ', error);
             return;

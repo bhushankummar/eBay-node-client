@@ -17,9 +17,11 @@ var categoryRequest = async function () {
     }
 
     var categoryTreeId = 203;
-    var search_terms = 'abc';
 
-    eBay.taxonomy.getCategorySuggestions(categoryTreeId, search_terms, function (error, response) {
+    var data = {
+        'q': 'abc'
+    };
+    eBay.taxonomy.getCategorySuggestions(categoryTreeId, data, function (error, response) {
         if (error) {
             console.log('error ', error);
             return;
