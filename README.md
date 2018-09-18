@@ -37,12 +37,12 @@ export EBAY_CLIENT_SECRET=SECRET
 
 ## Configuration Using JavaScript
 ```js
-var eBay = require('../../../lib/eBay-node-client')('YOUR_KEY', 'YOUR_SECRET');
+var eBay = require('ebay-node-client')('YOUR_KEY', 'YOUR_SECRET');
 ```
 
 ## Configuration Using TypeScript
 ```typescript
-import * as eBay from 'eBay-node-client';
+import * as eBay from 'ebay-node-client';
 
 const eBay = new eBay();
 eBay.setApiKey('YOUR_KEY', 'YOUR_SECRET');
