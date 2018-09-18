@@ -10,8 +10,10 @@ var inventoryRequest = async function () {
     var userToken = 'USER_TOKEN';
     eBay.setUserToken(userToken);
 
-    var sku = '32984729384729';
-    eBay.inventory.getInventoryItem(sku, function (error, response) {
+    var data = {
+        limit: '10'
+    };
+    eBay.inventory.getInventoryItems(data, function (error, response) {
         if (error) {
             console.log('error ', error);
             return;
