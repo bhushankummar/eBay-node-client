@@ -5,14 +5,14 @@ var clientSecret = process.env.EBAY_CLIENT_SECRET || 'YOUR_SECRET';
 
 var eBay = require('../../../../lib/eBay-node-client')(clientId, clientSecret, true);
 
-var feedRequest = async function () {
+var categoryRequest = async function () {
     try {
         var token = await eBay.application.getOAuthToken({
             grant_type: 'client_credentials',
             scope: 'https://api.ebay.com/oauth/api_scope'
         });
         eBay.setToken(token.access_token);
-    } catch (exeption) {
+    } catch (error) {
 
     }
 
@@ -25,4 +25,4 @@ var feedRequest = async function () {
     });
 };
 
-feedRequest();
+categoryRequest();

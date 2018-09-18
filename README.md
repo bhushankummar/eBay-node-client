@@ -1,11 +1,11 @@
-# amazon-mws (Amazon Marketplace Web Service)
-[![Build Status](https://travis-ci.org/bhushankumarl/amazon-mws.svg?branch=master)](https://travis-ci.org/bhushankumarl/amazon-mws)
+# eBay-node-client (eBay Node Client)
+[![Build Status](https://travis-ci.org/bhushankumarl/eBay-node-client.svg?branch=master)](https://travis-ci.org/bhushankumarl/eBay-node-client)
 
-This API supported Amazon Marketplace Web Service(MWS)'s standard REST-style API that accepts/returns JSON requests and Here is the [API reference] (http://docs.developer.amazonservices.com/en_IN/dev_guide/DG_IfNew.html)
+This API supported eBay's standard REST-style API that accepts/returns JSON requests and Here is the [API reference] (https://developer.ebay.com/api-docs/commerce/static/commerce-landing.html)
 
-You can testify API through [Amazon MWS Scratchpad](https://mws.amazonservices.in/scratchpad/index.html) without any installation.
+You can testify API through [eBay API Explorer](https://developer.ebay.com/my/api_test_tool) without any installation.
 
-You can find [examples of JavaScript and TypeScript here](https://github.com/bhushankumarl/amazon-mws/tree/master/examples). This will help you for faster implementation of Amazon Marketplace Web Service's(MWS).
+You can find [examples of JavaScript and TypeScript here](https://github.com/bhushankumarl/eBay-node-client/tree/master/examples). This will help you for faster implementation of eBay APIs.
 
 ##### It does supports EcmaScript 5, EcmaScript 6,  EcmaScript 8, TypeScript, async-await, Promises, Callback !
 ##### It does also supports for AWS Lambda like serverless cloud function call.
@@ -37,41 +37,34 @@ export EBAY_CLIENT_SECRET=SECRET
 
 ## Configuration Using JavaScript
 ```js
-var amazonMws = require('amazon-mws')('AWS_ACCESS_KEY_ID','AWS_SECRET_ACCESS_KEY');
+var eBay = require('../../../lib/eBay-node-client')('YOUR_KEY', 'YOUR_SECRET');
 ```
 
 ## Configuration Using TypeScript
 ```typescript
-import * as MwsApi from 'eBay-node-client';
+import * as eBay from 'eBay-node-client';
 
-const amazonMws = new MwsApi();
-amazonMws.setApiKey(accessKey, accessSecret);
+const eBay = new eBay();
+eBay.setApiKey('YOUR_KEY', 'YOUR_SECRET');
 ```
 
 ## Pull Request
 - Contributors can send their Pull Request to `development` branch.
 - Kindly validate test cases & linting before opening new PR.
 
-### Feeds
+### Application
 
-#### Submit Feed
+#### Get OAuth Token
 ```js
-    var FeedContent = fs.readFileSync('./file.txt', 'UTF-8');
-
-    amazonMws.feeds.submit({
-        'Version': '2009-01-01',
-        'Action': 'SubmitFeed',
-        'SellerId': 'SELLER_ID',
-        'MWSAuthToken': 'MWS_AUTH_TOKEN',
-        'FeedType': '_POST_PRODUCT_DATA_',
-        'FeedContent': FeedContent
-    }, function (error, response) {
-        if (error) {
-            console.log('error ', error);
-            return;
-        }
-        console.log('response', response);
-    });
+    try {
+        var token = await eBay.application.getOAuthToken({
+            grant_type: 'client_credentials',
+            scope: 'https://api.ebay.com/oauth/api_scope'
+        });
+        eBay.setToken(token.access_token);
+    } catch (error) {
+        console.log('error ', error);
+    }
 ```
 
 ```

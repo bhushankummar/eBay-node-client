@@ -14,8 +14,10 @@
     "before": false,
     "beforeEach": false,
     "after": false,
-    "afterEach": false
+    "afterEach": false,
+    "use strict": true
   },
+  "esversion": 6,
   "maxparams": 6,
   "maxdepth": 15,
   "browser": true,

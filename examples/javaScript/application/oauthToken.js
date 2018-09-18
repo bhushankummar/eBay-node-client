@@ -3,7 +3,7 @@
 var clientId = process.env.EBAY_CLIENT_ID || 'YOUR_KEY';
 var clientSecret = process.env.EBAY_CLIENT_SECRET || 'YOUR_SECRET';
 
-var eBay = require('../../../lib/eBay-node-client')(clientId, clientSecret, true);
+var eBay = require('../../../lib/eBay-node-client')(clientId, clientSecret);
 
 var feedRequest = async function () {
 
@@ -13,8 +13,8 @@ var feedRequest = async function () {
             scope: 'https://api.ebay.com/oauth/api_scope'
         });
         eBay.setToken(token.access_token);
-    } catch (exception) {
-        console.log('exception ', exception);
+    } catch (error) {
+        console.log('error ', error);
     }
 };
 
