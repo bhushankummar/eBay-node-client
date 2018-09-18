@@ -6,15 +6,8 @@ var clientSecret = process.env.EBAY_CLIENT_SECRET || 'YOUR_SECRET';
 var eBay = require('../../../../lib/eBay-node-client')(clientId, clientSecret);
 
 var browseRequest = async function () {
-    try {
-        var token = await eBay.application.getOAuthToken({
-            grant_type: 'client_credentials',
-            scope: 'https://api.ebay.com/oauth/api_scope'
-        });
-        eBay.setToken(token.access_token);
-    } catch (error) {
-        console.log('error ', error);
-    }
+    var userToken = 'USER_TOKEN';
+    eBay.setUserToken(userToken);
 
     var data = {
         'availability': {
@@ -43,7 +36,9 @@ var browseRequest = async function () {
             ]
         }
     };
-    eBay.inventory.createOrReplaceInventoryItem('MySKU', data, function (error, response) {
+
+    var sku = '32984729384729';
+    eBay.inventory.createOrReplaceInventoryItem(sku, data, function (error, response) {
         if (error) {
             console.log('error ', error);
             return;

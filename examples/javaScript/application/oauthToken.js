@@ -12,6 +12,7 @@ var applicationRequest = async function () {
             grant_type: 'client_credentials',
             scope: 'https://api.ebay.com/oauth/api_scope'
         });
+        console.log('token.access_token ', token.access_token);
         eBay.setToken(token.access_token);
     } catch (error) {
         console.log('error ', error);
