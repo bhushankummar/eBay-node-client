@@ -35,6 +35,11 @@ export EBAY_CLIENT_ID=KEY
 export EBAY_CLIENT_SECRET=SECRET
 ```
 
+## To Enable Sanbox Purpose
+```bash
+export EBAY_CLIENT_SANDBOX='true'
+```
+
 ## Configuration Using JavaScript
 ```js
 var eBay = require('ebay-node-client')('YOUR_KEY', 'YOUR_SECRET');

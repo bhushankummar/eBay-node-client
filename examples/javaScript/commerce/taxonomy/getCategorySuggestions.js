@@ -3,7 +3,7 @@
 var clientId = process.env.EBAY_CLIENT_ID || 'YOUR_KEY';
 var clientSecret = process.env.EBAY_CLIENT_SECRET || 'YOUR_SECRET';
 
-var eBay = require('../../../../lib/eBay-node-client')(clientId, clientSecret, true);
+var eBay = require('../../../../lib/eBay-node-client')(clientId, clientSecret);
 
 var categoryRequest = async function () {
     try {
