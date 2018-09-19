@@ -2,6 +2,7 @@
   - Add TypeScript example
   - Correct typo in README.md
   - Configure mocha test case
+  - Add types for the application, buy, commerce and sell APIs
 
 0.0.2 September 19, 2018
   - Add Support for browse API : search

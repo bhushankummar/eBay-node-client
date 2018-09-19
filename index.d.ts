@@ -1,93 +1,74 @@
-// Type definitions for amazon-mws
+// Type definitions for ebay-node-client
 
-declare class BaseAmazonMWS {
+declare class BaseeBayNodeClient {
+
+}
+
+declare class Application extends BaseeBayNodeClient {
+
+    getOAuthToken(params: any): Promise<any>;
+
+}
+
+declare class Browse extends BaseeBayNodeClient {
+
+    getItem(itemId: string): Promise<any>;
 
     search(params: any): Promise<any>;
 
 }
 
-declare class Feeds extends BaseAmazonMWS {
+declare class Taxonomy extends BaseeBayNodeClient {
 
-    submit(params: any): Promise<any>;
+    getCategorySubtree(categoryTreeId: string, params: any): Promise<any>;
 
-}
+    getCategorySuggestions(categoryTreeId: string, params: any): Promise<any>;
 
-declare class Finances extends BaseAmazonMWS {
+    getItemAspectsForCategory(categoryTreeId: string, params: any): Promise<any>;
 
-}
+    getCategoryTree(categoryTreeId: string): Promise<any>;
 
-declare class FulfillmentInboundShipment extends BaseAmazonMWS {
-
-    create(params: any): Promise<any>;
+    getDefaultCategoryTreeId(params: any): Promise<any>;
 
 }
 
-declare class FulfillmentInventory extends BaseAmazonMWS {
+declare class Inventory extends BaseeBayNodeClient {
 
+    createOrReplaceInventoryItem(sku: string, params: any): Promise<any>;
+
+    getInventoryItem(sku: string): Promise<any>;
+
+    getInventoryItems(params: any): Promise<any>;
+    
 }
 
-declare class FulfillmentOutboundShipment extends BaseAmazonMWS {
+declare class eBayNodeClient {
 
-}
+    application: Application;
 
-declare class MerchantFulfillment extends BaseAmazonMWS {
+    browse: Browse;
 
-    create(params: any): Promise<any>;
+    taxonomy: Taxonomy;
 
-}
-
-declare class Orders extends BaseAmazonMWS {
-
-}
-
-declare class Products extends BaseAmazonMWS {
-
-    searchFor(params: any): Promise<any>;
-
-}
-
-declare class Reports extends BaseAmazonMWS {
-
-}
-
-declare class Sellers extends BaseAmazonMWS {
-
-}
-
-declare class AmazonMWS {
+    inventory: Inventory;
 
     constructor()
 
-    constructor(key: string, token: string);
+    constructor(clientId: string, clientSecret: string);
 
-    setApiKey(key: string, secret: string): void;
+    constructor(clientId: string, clientSecret: string, isSandbox: boolean);
+
+    setApiKey(clientId: string, clientSecret: string): void;
 
     setHost(host?: string, port?: string, protocol?: string): void;
 
-    feeds: Feeds;
+    setToken(applicationToken: string): void;
 
-    finances: Finances;
-
-    fulfillmentInboundShipment: FulfillmentInboundShipment;
-
-    fulfillmentInventory: FulfillmentInventory;
-
-    fulfillmentOutboundShipment: FulfillmentOutboundShipment;
-
-    merchantFulfillment: MerchantFulfillment;
-
-    orders: Orders;
-
-    products: Products;
-
-    reports: Reports;
-
-    sellers: Sellers;
-
+    setUserToken(userToken: string): void;
 }
 
 
-declare namespace AmazonMWS {
+declare namespace eBayNodeClient {
 
 }
-export = AmazonMWS;
+export = eBayNodeClient;
