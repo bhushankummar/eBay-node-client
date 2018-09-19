@@ -5,7 +5,7 @@ var clientSecret = process.env.EBAY_CLIENT_SECRET || 'YOUR_SECRET';
 
 var eBay = require('../../../../lib/eBay-node-client')(clientId, clientSecret);
 
-var browseRequest = async function () {
+var browseRequest = function () {
     var userToken = 'USER_TOKEN';
     eBay.setUserToken(userToken);
 

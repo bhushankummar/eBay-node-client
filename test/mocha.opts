@@ -1,0 +1,11 @@
+###
+### mocha.opts
+###
+
+--bail
+--silly
+--full-trace
+--recursive
+--timeout 20000
+--reporter spec
+./test/specs/**/*.spec.js
