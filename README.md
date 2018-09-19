@@ -16,7 +16,7 @@ You can find [examples of JavaScript and TypeScript here](https://github.com/bhu
 
 ## Installation
 ```bash
-npm install eBay-node-client --save
+npm install ebay-node-client --save
 ```
 
 ## Test Cases
@@ -35,7 +35,7 @@ export EBAY_CLIENT_ID=KEY
 export EBAY_CLIENT_SECRET=SECRET
 ```
 
-## To Enable Sanbox Purpose
+## To Enable Sandbox Purpose
 ```bash
 export EBAY_CLIENT_SANDBOX='true'
 ```

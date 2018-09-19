@@ -1,3 +1,8 @@
+0.0.3 September 19, 2018
+  - Add TypeScript example
+  - Correct typo in README.md
+  - Configure mocha test case
+
 0.0.2 September 19, 2018
   - Add Support for browse API : search
   - Add SANDBOX usage using environment variable

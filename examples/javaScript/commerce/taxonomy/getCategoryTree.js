@@ -14,7 +14,8 @@ var categoryRequest = async function () {
         });
         eBay.setToken(token.access_token);
     } catch (error) {
-
+        console.log('error ', error);
+        return;
     }
 
     var categoryTreeId = 203;
