@@ -4,6 +4,18 @@ declare class BaseClient {
 
 }
 
+declare class Account extends BaseClient {
+
+    getSalesTaxes(params: any): Promise<any>;
+
+    getSalesTax(countryCode: string, jurisdictionId: string): Promise<any>;
+
+    deleteSalesTax(countryCode: string, jurisdictionId: string): Promise<any>;
+
+    createOrReplaceSalesTax(countryCode: string, jurisdictionId: string, params: any): Promise<any>;
+
+}
+
 declare class Application extends BaseClient {
 
     getOAuthToken(params: any): Promise<any>;
@@ -63,15 +75,17 @@ declare class Inventory extends BaseClient {
 
 declare class eBayNodeClient {
 
+    account: Account;
+
     application: Application;
 
     browse: Browse;
 
     catalog: Catalog;
 
-    taxonomy: Taxonomy;
-
     inventory: Inventory;
+    
+    taxonomy: Taxonomy;
 
     constructor()
 

@@ -1,5 +1,6 @@
 0.0.4 September 20, 2018
   - Add Support for catalog API : search, getProduct, getProductMetadata, getProductMetadataForCategories, getChangeRequest, getChangeRequests, createChangeRequest 
+  - Add Support for account API : getSalesTaxes, getSalesTax, deleteSalesTax, createOrReplaceSalesTax
 
 0.0.3 September 19, 2018
   - Add TypeScript example
