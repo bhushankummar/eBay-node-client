@@ -1,3 +1,6 @@
+0.0.4 September 20, 2018
+  - Add Support for catalog API : search, getProduct, getProductMetadata, getProductMetadataForCategories, getChangeRequest, getChangeRequests, createChangeRequest 
+
 0.0.3 September 19, 2018
   - Add TypeScript example
   - Correct typo in README.md
