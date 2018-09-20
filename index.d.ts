@@ -1,24 +1,55 @@
 // Type definitions for ebay-node-client
 
-declare class BaseeBayNodeClient {
+declare class BaseClient {
 
 }
 
-declare class Application extends BaseeBayNodeClient {
+declare class Account extends BaseClient {
+
+    getSalesTaxes(params: any): Promise<any>;
+
+    getSalesTax(countryCode: string, jurisdictionId: string): Promise<any>;
+
+    deleteSalesTax(countryCode: string, jurisdictionId: string): Promise<any>;
+
+    createOrReplaceSalesTax(countryCode: string, jurisdictionId: string, params: any): Promise<any>;
+
+}
+
+declare class Application extends BaseClient {
 
     getOAuthToken(params: any): Promise<any>;
 
 }
 
-declare class Browse extends BaseeBayNodeClient {
-
-    getItem(itemId: string): Promise<any>;
+declare class Browse extends BaseClient {
 
     search(params: any): Promise<any>;
 
+    getItem(itemId: string): Promise<any>;
+
 }
 
-declare class Taxonomy extends BaseeBayNodeClient {
+declare class Catalog extends BaseClient {
+
+
+    search(params: any): Promise<any>;
+
+    getProduct(epId: string): Promise<any>;
+
+    getProductMetadata(params: any): Promise<any>;
+
+    getProductMetadataForCategories(params: any): Promise<any>;
+
+    getChangeRequest(changeRequestId: string): Promise<any>;
+
+    getChangeRequests(): Promise<any>;
+
+    createChangeRequest(params: any): Promise<any>;
+
+}
+
+declare class Taxonomy extends BaseClient {
 
     getCategorySubtree(categoryTreeId: string, params: any): Promise<any>;
 
@@ -32,25 +63,29 @@ declare class Taxonomy extends BaseeBayNodeClient {
 
 }
 
-declare class Inventory extends BaseeBayNodeClient {
+declare class Inventory extends BaseClient {
 
     createOrReplaceInventoryItem(sku: string, params: any): Promise<any>;
 
     getInventoryItem(sku: string): Promise<any>;
 
     getInventoryItems(params: any): Promise<any>;
-    
+
 }
 
 declare class eBayNodeClient {
+
+    account: Account;
 
     application: Application;
 
     browse: Browse;
 
-    taxonomy: Taxonomy;
+    catalog: Catalog;
 
     inventory: Inventory;
+    
+    taxonomy: Taxonomy;
 
     constructor()
 
