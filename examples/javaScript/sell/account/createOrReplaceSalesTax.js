@@ -7,12 +7,10 @@ var eBay = require('../../../../lib/eBay-node-client')(clientId, clientSecret);
 
 var utils = require('../../../javaScript/utils');
 
-var catalogRequest = async function () {
-
+var accountRequest = async function () {
     var userToken = utils.USER_TOKEN;
     eBay.setUserToken(userToken);
-
-
+    
     var countryCode = 'US';
     var jurisdictionId = 'IN';
     var data = {
@@ -28,4 +26,4 @@ var catalogRequest = async function () {
     }
 };
 
-catalogRequest();
+accountRequest();
