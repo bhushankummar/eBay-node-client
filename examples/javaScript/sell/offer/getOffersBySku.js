@@ -6,15 +6,15 @@ var clientSecret = process.env.EBAY_CLIENT_SECRET || 'YOUR_SECRET';
 var eBay = require('../../../../lib/eBay-node-client')(clientId, clientSecret);
 var utils = require('../../../javaScript/utils');
 
-var accountRequest = async function () {
+var offerRequest = async function () {
     var userToken = utils.USER_TOKEN;
     eBay.setUserToken(userToken);
 
-
-    var countryCode = 'US';
-    var jurisdictionId = 'IN';
+    var data = {
+        sku: '32984729384730'
+    };
     try {
-        var response = await eBay.account.deleteSalesTax(countryCode, jurisdictionId);
+        var response = await eBay.offer.getOffers(data);
         console.log('response', response);
     } catch (error) {
         console.log('error ', error);
@@ -22,4 +22,4 @@ var accountRequest = async function () {
     }
 };
 
-accountRequest();
+offerRequest();

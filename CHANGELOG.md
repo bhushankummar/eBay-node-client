@@ -1,3 +1,6 @@
+0.0.5 October 3, 2018
+  - Add Support for Offer API : createOffer, updateOffer,getOffer, getOffers, publishOffer, deleteOffer, getListingFees, withdrawOffer
+
 0.0.4 September 20, 2018
   - Add Support for catalog API : search, getProduct, getProductMetadata, getProductMetadataForCategories, getChangeRequest, getChangeRequests, createChangeRequest 
   - Add Support for account API : getSalesTaxes, getSalesTax, deleteSalesTax, createOrReplaceSalesTax
