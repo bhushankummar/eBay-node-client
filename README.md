@@ -1,5 +1,5 @@
 # eBay-node-client (eBay Node Client)
-[![Version](https://img.shields.io/npm/v/eBay-node-client.svg)](https://www.npmjs.org/package/eBay-node-client)
+[![Version](https://img.shields.io/npm/v/ebay-node-client.svg)](https://www.npmjs.org/package/ebay-node-client)
 [![Build Status](https://travis-ci.org/bhushankumarl/eBay-node-client.svg?branch=master)](https://travis-ci.org/bhushankumarl/eBay-node-client)
 
 This API supported eBay's standard REST-style API that accepts/returns JSON requests and Here is the [API reference] (https://developer.ebay.com/api-docs/commerce/static/commerce-landing.html)

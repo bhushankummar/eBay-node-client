@@ -32,7 +32,6 @@ declare class Browse extends BaseClient {
 
 declare class Catalog extends BaseClient {
 
-
     search(params: any): Promise<any>;
 
     getProduct(epId: string): Promise<any>;
@@ -46,7 +45,6 @@ declare class Catalog extends BaseClient {
     getChangeRequests(): Promise<any>;
 
     createChangeRequest(params: any): Promise<any>;
-
 }
 
 declare class Taxonomy extends BaseClient {
@@ -60,7 +58,6 @@ declare class Taxonomy extends BaseClient {
     getCategoryTree(categoryTreeId: string): Promise<any>;
 
     getDefaultCategoryTreeId(params: any): Promise<any>;
-
 }
 
 declare class Inventory extends BaseClient {
@@ -70,7 +67,42 @@ declare class Inventory extends BaseClient {
     getInventoryItem(sku: string): Promise<any>;
 
     getInventoryItems(params: any): Promise<any>;
+}
 
+declare class Location extends BaseClient {
+
+    createOrReplaceInventoryItem(merchantLocationKey: string): Promise<any>;
+
+    deleteInventoryLocation(merchantLocationKey: string): Promise<any>;
+
+    disableInventoryLocation(merchantLocationKey: string): Promise<any>;
+
+    enableInventoryLocation(merchantLocationKey: string): Promise<any>;
+
+    getInventoryLocation(merchantLocationKey: string): Promise<any>;
+
+    updateInventoryLocation(merchantLocationKey: string, params: any): Promise<any>;
+
+    getInventoryLocations(params: any): Promise<any>;
+}
+
+declare class Offer extends BaseClient {
+
+    createOffer(params: any): Promise<any>;
+
+    deleteOffer(offerId: string): Promise<any>;
+
+    getOffer(offerId: string): Promise<any>;
+
+    publishOffer(offerId: string): Promise<any>;
+
+    getOffers(params: any): Promise<any>;
+
+    getOffers(params: any): Promise<any>;
+
+    getListingFees(params: any): Promise<any>;
+
+    withdrawOffer(offerId: string): Promise<any>;
 }
 
 declare class eBayNodeClient {
@@ -83,8 +115,12 @@ declare class eBayNodeClient {
 
     catalog: Catalog;
 
+    location: Location;
+
     inventory: Inventory;
-    
+
+    offer: Offer;
+
     taxonomy: Taxonomy;
 
     constructor()

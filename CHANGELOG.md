@@ -1,5 +1,7 @@
 0.0.5 October 3, 2018
   - Add Support for Offer API : createOffer, updateOffer,getOffer, getOffers, publishOffer, deleteOffer, getListingFees, withdrawOffer
+  - Add Support for Seller Location API : createInventoryLocation, updateInventoryLocation, enableInventoryLocation, disableInventoryLocation, getInventoryLocation, deleteInventoryLocation, getInventoryLocations
+  - Add Offer & Seller Location support types
 
 0.0.4 September 20, 2018
   - Add Support for catalog API : search, getProduct, getProductMetadata, getProductMetadataForCategories, getChangeRequest, getChangeRequests, createChangeRequest 

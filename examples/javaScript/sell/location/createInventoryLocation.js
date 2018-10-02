@@ -64,8 +64,9 @@ var offerRequest = async function () {
         ]
     };
 
+    var customLocationIdentifier = 'LOC1014';
     try {
-        var response = await eBay.location.createInventoryLocation(data);
+        var response = await eBay.location.createInventoryLocation(customLocationIdentifier, data);
         console.log('response', response);
     } catch (error) {
         console.log('error ', error);
