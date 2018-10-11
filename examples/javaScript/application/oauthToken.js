@@ -6,7 +6,6 @@ var clientSecret = process.env.EBAY_CLIENT_SECRET || 'YOUR_SECRET';
 var eBay = require('../../../lib/eBay-node-client')(clientId, clientSecret);
 
 var applicationRequest = async function () {
-
     try {
         var token = await eBay.application.getOAuthToken({
             grant_type: 'client_credentials',

@@ -9,7 +9,6 @@ var utils = require('../../../javaScript/utils');
 var offerRequest = async function () {
     var userToken = utils.USER_TOKEN;
     eBay.setUserToken(userToken);
-
     var data = {
         offers: [
             {
@@ -17,7 +16,6 @@ var offerRequest = async function () {
             }
         ]
     };
-
     try {
         var response = await eBay.offer.getListingFees(data);
         console.log('response', response);

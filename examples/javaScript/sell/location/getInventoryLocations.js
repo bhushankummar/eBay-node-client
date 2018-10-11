@@ -9,7 +9,6 @@ var utils = require('../../../javaScript/utils');
 var offerRequest = async function () {
     var userToken = utils.USER_TOKEN;
     eBay.setUserToken(userToken);
-
     var data = {
         limit: 10,
         offset: 0

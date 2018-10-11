@@ -9,7 +9,6 @@ var utils = require('../../../javaScript/utils');
 var offerRequest = async function () {
     var userToken = utils.USER_TOKEN;
     eBay.setUserToken(userToken);
-
     var data = {
         'availableQuantity': 60,
         'categoryId': '30120',
@@ -27,7 +26,6 @@ var offerRequest = async function () {
         },
         'quantityLimitPerBuyer': 3
     };
-
     var offerId = '6360335010';
     try {
         var response = await eBay.offer.updateOffer(offerId, data);

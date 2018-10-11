@@ -9,7 +9,6 @@ var utils = require('../../../javaScript/utils');
 var offerRequest = async function () {
     var userToken = utils.USER_TOKEN;
     eBay.setUserToken(userToken);
-
     var offerId = '6360335010';
     try {
         var response = await eBay.offer.getOffer(offerId);

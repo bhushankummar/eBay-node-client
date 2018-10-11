@@ -6,11 +6,9 @@ var clientSecret = process.env.EBAY_CLIENT_SECRET || 'YOUR_SECRET';
 var eBay = require('../../../../lib/eBay-node-client')(clientId, clientSecret);
 var utils = require('../../../javaScript/utils');
 
-var inventoryRequest = function () {
-
+var inventoryRequest = async function () {
     var userToken = utils.USER_TOKEN;
     eBay.setUserToken(userToken);
-
     var data = {
         'availability': {
             'shipToLocationAvailability': {
@@ -38,15 +36,14 @@ var inventoryRequest = function () {
             ]
         }
     };
-
     var sku = '32984729384730';
-    eBay.inventory.createOrReplaceInventoryItem(sku, data, function (error, response) {
-        if (error) {
-            console.log('error ', error);
-            return;
-        }
+    try {
+        var response = await eBay.inventory.createOrReplaceInventoryItem(sku, data);
         console.log('response', response);
-    });
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }
 };
 
 inventoryRequest();

@@ -19,16 +19,15 @@ var categoryRequest = async function () {
 
     var categoryTreeId = 203;
     var data = {
-        category_id: '179623'
+        category_id: '931'
     };
-
-    eBay.taxonomy.getItemAspectsForCategory(categoryTreeId, data, function (error, response) {
-        if (error) {
-            console.log('error ', error);
-            return;
-        }
+    try {
+        var response = await eBay.taxonomy.getItemAspectsForCategory(categoryTreeId, data);
         console.log('response', response);
-    });
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }
 };
 
 categoryRequest();

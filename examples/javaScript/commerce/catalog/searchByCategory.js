@@ -10,7 +10,6 @@ var utils = require('../../../javaScript/utils');
 var catalogRequest = async function () {
     var userToken = utils.USER_TOKEN;
     eBay.setUserToken(userToken);
-
     var data = {
         // Leaf Category Name
         q: 'Video Cables',

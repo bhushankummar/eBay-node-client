@@ -21,13 +21,13 @@ var browseRequest = async function () {
         gtin: '010942122258',
         limit: '1'
     };
-    eBay.browse.search(data, function (error, response) {
-        if (error) {
-            console.log('error ', error);
-            return;
-        }
+    try {
+        var response = await eBay.browse.search(data);
         console.log('response', response);
-    });
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }
 };
 
 browseRequest();

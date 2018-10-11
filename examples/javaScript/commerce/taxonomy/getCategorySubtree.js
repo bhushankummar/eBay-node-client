@@ -21,14 +21,13 @@ var categoryRequest = async function () {
     var data = {
         category_id: '179623'
     };
-
-    eBay.taxonomy.getCategorySubtree(categoryTreeId, data , function (error, response) {
-        if (error) {
-            console.log('error ', error);
-            return;
-        }
+    try {
+        var response = await eBay.taxonomy.getCategorySubtree(categoryTreeId, data);
         console.log('response', response);
-    });
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }
 };
 
 categoryRequest();

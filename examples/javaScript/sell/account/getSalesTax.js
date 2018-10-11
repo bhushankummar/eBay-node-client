@@ -9,7 +9,6 @@ var utils = require('../../../javaScript/utils');
 var accountRequest = async function () {
     var userToken = utils.USER_TOKEN;
     eBay.setUserToken(userToken);
-
     var countryCode = 'US';
     var jurisdictionId = 'IN';
     try {

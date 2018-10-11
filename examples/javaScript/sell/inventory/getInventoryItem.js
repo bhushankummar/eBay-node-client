@@ -9,15 +9,13 @@ var utils = require('../../../javaScript/utils');
 var inventoryRequest = async function () {
     var userToken = utils.USER_TOKEN;
     eBay.setUserToken(userToken);
-
     var sku = '32984729384729';
-    eBay.inventory.getInventoryItem(sku, function (error, response) {
-        if (error) {
-            console.log('error ', error);
-            return;
-        }
-        console.log('response', response);
-    });
+    try {
+        var response = await eBay.inventory.getInventoryItem(sku);
+        console.log('response ', response);
+    } catch (error) {
+        console.log('error ', error);
+    }
 };
 
 inventoryRequest();
