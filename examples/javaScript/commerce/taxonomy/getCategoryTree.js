@@ -19,13 +19,13 @@ var categoryRequest = async function () {
     }
 
     var categoryTreeId = 203;
-    eBay.taxonomy.getCategoryTree(categoryTreeId, function (error, response) {
-        if (error) {
-            console.log('error ', error);
-            return;
-        }
+    try {
+        var response = await eBay.taxonomy.getCategoryTree(categoryTreeId);
         console.log('response', response);
-    });
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }
 };
 
 categoryRequest();

@@ -11,11 +11,18 @@ var inventoryRequest = async function () {
     eBay.setUserToken(userToken);
 
     var data = {
-        limit: '10'
+        'requests': [
+            {
+                'sku': '13465446'
+            },
+            {
+                'sku': '132165496'
+            }
+        ]
     };
     try {
-        var response = await eBay.inventory.getInventoryItems(data);
-        console.log('response', response);
+        var response = await eBay.inventory.bulkGetInventoryItem(data);
+        console.log('response ', response);
     } catch (error) {
         console.log('error ', error);
         return;

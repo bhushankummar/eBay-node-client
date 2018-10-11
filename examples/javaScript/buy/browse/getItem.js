@@ -18,13 +18,13 @@ var browseRequest = async function () {
     }
 
     var itemId = 'v1|110329773707|410089528845';
-    eBay.browse.getItem(itemId, function (error, response) {
-        if (error) {
-            console.log('error ', error);
-            return;
-        }
+    try {
+        var response = await eBay.browse.getItem(itemId);
         console.log('response', response);
-    });
+    } catch (error) {
+        console.log('error', error);
+        return;
+    }
 };
 
 browseRequest();
