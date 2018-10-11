@@ -9,7 +9,6 @@ var utils = require('../../../javaScript/utils');
 var offerRequest = async function () {
     var userToken = utils.USER_TOKEN;
     eBay.setUserToken(userToken);
-
     var customLocationIdentifier = 'LOC1014';
     try {
         var response = await eBay.location.getInventoryLocation(customLocationIdentifier);

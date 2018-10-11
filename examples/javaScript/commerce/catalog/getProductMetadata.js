@@ -8,10 +8,8 @@ var eBay = require('../../../../lib/eBay-node-client')(clientId, clientSecret);
 var utils = require('../../../javaScript/utils');
 
 var catalogRequest = async function () {
-
     var userToken = utils.USER_TOKEN;
     eBay.setUserToken(userToken);
-
     var data = {
         'epid': '241827861',
         'primary_category_id': '9355',

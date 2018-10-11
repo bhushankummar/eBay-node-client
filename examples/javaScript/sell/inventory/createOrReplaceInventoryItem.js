@@ -7,10 +7,8 @@ var eBay = require('../../../../lib/eBay-node-client')(clientId, clientSecret);
 var utils = require('../../../javaScript/utils');
 
 var inventoryRequest = async function () {
-
     var userToken = utils.USER_TOKEN;
     eBay.setUserToken(userToken);
-
     var data = {
         'availability': {
             'shipToLocationAvailability': {
