@@ -67,6 +67,8 @@ declare class Inventory extends BaseClient {
     getInventoryItem(sku: string): Promise<any>;
 
     getInventoryItems(params: any): Promise<any>;
+
+    getBulkInventoryItem(params: any): Promise<any>;
 }
 
 declare class Location extends BaseClient {
