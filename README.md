@@ -58,21 +58,6 @@ eBay.setApiKey('YOUR_KEY', 'YOUR_SECRET');
 - Contributors can send their Pull Request to `development` branch.
 - Kindly validate test cases & linting before opening new PR.
 
-### Application
-
-#### Get OAuth Token
-```js
-    try {
-        var token = await eBay.application.getOAuthToken({
-            grant_type: 'client_credentials',
-            scope: 'https://api.ebay.com/oauth/api_scope'
-        });
-        eBay.setToken(token.access_token);
-    } catch (error) {
-        console.log('error ', error);
-    }
-```
-
 ```
 Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushankumar.lilapara@gmail.com).
 ```
