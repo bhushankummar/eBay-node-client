@@ -1,6 +1,6 @@
-0.0.6 October 11, 2018
-  - Add Support for Inventory API : getBulkInventoryItem
-  - Add examples in README.md
+0.0.7 October 27, 2018
+  - Add Support for Inventory API : deleteInventoryItem
+  - Add examples for deleteInventoryItem
 
 0.0.5 October 3, 2018
   - Add Support for Offer API : createOffer, updateOffer,getOffer, getOffers, publishOffer, deleteOffer, getListingFees, withdrawOffer

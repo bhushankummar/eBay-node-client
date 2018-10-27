@@ -1,6 +1,6 @@
 {
   "name": "ebay-node-client",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "eBay API wrapper",
   "keywords": [
     "eBay",
@@ -66,9 +66,8 @@
     "bluebird": "^3.5.1",
     "chai": "^4.1.2",
     "debug": "^3.1.0",
-    "fast-csv": "^2.4.0",
     "fs-extra": "^5.0.0",
-    "iconv-lite": "^0.4.23",
+    "iconv-lite": "^0.4.24",
     "lodash": "^4.17.4",
     "mocha": "^5.2.0",
     "object-assign": "^4.1.0",

@@ -64,6 +64,8 @@ declare class Inventory extends BaseClient {
 
     createOrReplaceInventoryItem(sku: string, params: any): Promise<any>;
 
+    deleteInventoryItem(sku: string): Promise<any>;
+
     getInventoryItem(sku: string): Promise<any>;
 
     getInventoryItems(params: any): Promise<any>;
