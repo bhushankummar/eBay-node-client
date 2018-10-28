@@ -4,6 +4,7 @@ var clientId = process.env.EBAY_CLIENT_ID || 'YOUR_KEY';
 var clientSecret = process.env.EBAY_CLIENT_SECRET || 'YOUR_SECRET';
 
 var eBay = require('../../../../lib/eBay-node-client')(clientId, clientSecret);
+var fse = require('fs-extra');
 
 var categoryRequest = async function () {
     try {
@@ -18,12 +19,10 @@ var categoryRequest = async function () {
     }
 
     var categoryTreeId = '0';
-    var data = {
-        category_id: '34'
-    };
     try {
-        var response = await eBay.taxonomy.getCategorySubtree(categoryTreeId, data);
+        var response = await eBay.taxonomy.getCategoryTree(categoryTreeId);
         console.log('response', JSON.stringify(response));
+        fse.writeFileSync('temp/response.json', JSON.stringify(response));
     } catch (error) {
         console.log('error ', error);
         return;

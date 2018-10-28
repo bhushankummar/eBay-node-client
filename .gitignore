@@ -62,3 +62,6 @@ typings/
 
 #IDE
 .idea
+
+#Temp Directory
+temp/*

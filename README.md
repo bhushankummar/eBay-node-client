@@ -58,10 +58,13 @@ eBay.setApiKey('YOUR_KEY', 'YOUR_SECRET');
 - Contributors can send their Pull Request to `development` branch.
 - Kindly validate test cases & linting before opening new PR.
 
+## Do you need an expert?
+Are you finding a developer for your word class product? If yes, please contact here. [Submit your project request here.](https://goo.gl/forms/UofdG5GY5iHMoUWg2)
 ```
 Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushankumar.lilapara@gmail.com).
 ```
 
+## Examples
 ### Application
 #### Oauth Token
 ```
