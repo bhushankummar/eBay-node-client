@@ -72,6 +72,7 @@
     "mocha": "^5.2.0",
     "object-assign": "^4.1.0",
     "qs": "^6.5.1",
+    "simple-oauth2": "^2.2.1",
     "xml2js": "^0.4.19"
   },
   "license": "MIT",
