@@ -1,3 +1,6 @@
+0.0.8 December 13, 2018
+  - Add Support for eBay User Token : Get Redirect URL, Retrieve User Token & Refresh User Token
+
 0.0.7 October 27, 2018
   - Add Support for Inventory API : deleteInventoryItem
   - Add examples for deleteInventoryItem

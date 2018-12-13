@@ -109,6 +109,15 @@ declare class Offer extends BaseClient {
     withdrawOffer(offerId: string): Promise<any>;
 }
 
+declare class User extends BaseClient {
+
+    getRedirectUrl(params: any): Promise<any>;
+
+    retrieveUserToken(params: any): Promise<any>;
+
+    refreshUserToken(params: any): Promise<any>;
+}
+
 declare class eBayNodeClient {
 
     account: Account;
@@ -126,6 +135,8 @@ declare class eBayNodeClient {
     offer: Offer;
 
     taxonomy: Taxonomy;
+
+    user: User;
 
     constructor()
 

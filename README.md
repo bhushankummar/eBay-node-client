@@ -59,10 +59,8 @@ eBay.setApiKey('YOUR_KEY', 'YOUR_SECRET');
 - Kindly validate test cases & linting before opening new PR.
 
 ## Do you need an expert?
-Are you finding a developer for your word class product? If yes, please contact here. [Submit your project request here.](https://goo.gl/forms/UofdG5GY5iHMoUWg2)
-```
-Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushankumar.lilapara@gmail.com).
-```
+Are you finding a developer for your world-class product? If yes, please contact here. [Submit your project request here.](https://goo.gl/forms/UofdG5GY5iHMoUWg2)
+Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 
 ## Examples
 ### Application
@@ -77,9 +75,10 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
         eBay.setToken(token.access_token);
     } catch (error) {
         console.log('error ', error);
-    }
-    
+    }    
 ```
+
+### Buy
 ### Browse
 #### Get Item
 ```
@@ -101,9 +100,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Search
 ```
     try {
@@ -127,9 +126,10 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
+### Commerce
 ### Catalog
 #### Create Change Request
 ```
@@ -160,9 +160,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Get Change Request
 ```
     var userToken = utils.USER_TOKEN;
@@ -174,9 +174,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Get Change Requests
 ```
     var userToken = utils.USER_TOKEN;
@@ -187,9 +187,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Get Product
 ```
     var userToken = utils.USER_TOKEN;
@@ -201,9 +201,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Get Product Metadata
 ```
     var userToken = utils.USER_TOKEN;
@@ -219,9 +219,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Get Product Metadata For Categories
 ```
     var userToken = utils.USER_TOKEN;
@@ -236,9 +236,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Search
 ```
     var userToken = utils.USER_TOKEN;
@@ -252,9 +252,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Search By Category
 ```
     var userToken = utils.USER_TOKEN;
@@ -271,9 +271,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 ### Taxonomy
 #### Get Category Subtree
 ```
@@ -288,19 +288,19 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
         return;
     }
 
-    var categoryTreeId = 203;
+    var categoryTreeId = '0';
     var data = {
-        category_id: '179623'
+        category_id: '34'
     };
     try {
         var response = await eBay.taxonomy.getCategorySubtree(categoryTreeId, data);
-        console.log('response', response);
+        console.log('response', JSON.stringify(response));
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Get Category Suggestions
 ```
     try {
@@ -324,9 +324,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Get Category Tree
 ```
     try {
@@ -347,9 +347,33 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
+#### Get Category Tree To File
+```
+    try {
+        var token = await eBay.application.getOAuthToken({
+            grant_type: 'client_credentials',
+            scope: 'https://api.ebay.com/oauth/api_scope'
+        });
+        eBay.setToken(token.access_token);
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }
+
+    var categoryTreeId = '0';
+    try {
+        var response = await eBay.taxonomy.getCategoryTree(categoryTreeId);
+        console.log('response', JSON.stringify(response));
+        fse.writeFileSync('temp/response.json', JSON.stringify(response));
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }    
+```
+
 #### Get Default Category Tree Id
 ```
     try {
@@ -372,9 +396,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Get Item Aspects For Category
 ```
     try {
@@ -398,9 +422,10 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
+### Sell
 ### Account
 #### Create Or Replace Sales Tax
 ```
@@ -418,9 +443,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Delete Sales Tax
 ```
     var userToken = utils.USER_TOKEN;
@@ -433,9 +458,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Get Sales Tax
 ```
     var userToken = utils.USER_TOKEN;
@@ -448,9 +473,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Get Sales Taxes
 ```
     var userToken = utils.USER_TOKEN;
@@ -464,9 +489,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 ### Inventory
 #### Create Or Replace Inventory Item
 ```
@@ -506,9 +531,24 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
+#### Delete Inventory Item
+```
+    var userToken = utils.USER_TOKEN;
+    eBay.setUserToken(userToken);
+
+    var sku = '32984729384730';
+    try {
+        var response = await eBay.inventory.deleteInventoryItem(sku);
+        console.log('response', response);
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }    
+```
+
 #### Get Bulk Inventory Item
 ```
     var userToken = utils.USER_TOKEN;
@@ -529,9 +569,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Get Inventory Item
 ```
     var userToken = utils.USER_TOKEN;
@@ -542,9 +582,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
         console.log('response ', response);
     } catch (error) {
         console.log('error ', error);
-    }
-    
+    }    
 ```
+
 #### Get Inventory Items
 ```
     var userToken = utils.USER_TOKEN;
@@ -558,9 +598,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 ### Location
 #### Create Inventory Location
 ```
@@ -626,9 +666,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Delete Inventory Location
 ```
     var userToken = utils.USER_TOKEN;
@@ -640,9 +680,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Disable Inventory Location
 ```
     var userToken = utils.USER_TOKEN;
@@ -654,9 +694,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Enable Inventory Location
 ```
     var userToken = utils.USER_TOKEN;
@@ -668,9 +708,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Get Inventory Location
 ```
     var userToken = utils.USER_TOKEN;
@@ -682,9 +722,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Get Inventory Locations
 ```
     var userToken = utils.USER_TOKEN;
@@ -699,9 +739,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Update Inventory Location
 ```
     var userToken = utils.USER_TOKEN;
@@ -731,9 +771,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 ### Offer
 #### Create Offer
 ```
@@ -771,9 +811,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Delete Offer
 ```
     var userToken = utils.USER_TOKEN;
@@ -785,9 +825,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Get Listing Fees
 ```
     var userToken = utils.USER_TOKEN;
@@ -805,9 +845,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Get Offer
 ```
     var userToken = utils.USER_TOKEN;
@@ -819,9 +859,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Get Offers By Sku
 ```
     var userToken = utils.USER_TOKEN;
@@ -835,9 +875,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Publish Offer
 ```
     var userToken = utils.USER_TOKEN;
@@ -849,9 +889,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Update Offer
 ```
     var userToken = utils.USER_TOKEN;
@@ -880,9 +920,9 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
 #### Withdraw Offer
 ```
     var userToken = utils.USER_TOKEN;
@@ -894,6 +934,65 @@ Originally by [Bhushankumar Lilapara](https://github.com/bhushankumarl) (bhushan
     } catch (error) {
         console.log('error ', error);
         return;
-    }
-    
+    }    
 ```
+
+### User
+#### Get Redirect Url
+```
+    try {
+        var DEFAULT_SCOPE_SANDBOX = 'https://api.ebay.com/oauth/api_scope/sell.inventory https://api.ebay.com/oauth/api_scope/commerce.catalog.readonly';
+
+        var options = {
+            scope: DEFAULT_SCOPE_SANDBOX,
+            redirectURI: 'Bhushankumar_L-Bhushank-DemoAp-onqph'
+        };
+        var response = await eBay.user.getRedirectUrl(options);
+        console.log('redirectUrl ', response);
+    } catch (error) {
+        console.log('error ', error);
+    }    
+```
+
+#### Refresh User Token
+```
+    try {
+        var options = {
+            access_token: 'v7.1#i7#p^3#f^0#I^3#r^0#t^H4sIAAAAAAAAAOVXa2wUVRTu9sGrIAkSkGriOpgQITM7d3ZnZ2eg22xf0ABt6baIEGzvzpxph87ObObOtt0fxKYmRYkgsTEGAeWR9A+BgOGPkfKjFU1ATA1RgwkkakSjMfGFpojRO9sHbY2ALiRN3D+Te+65557vO989ey/fPWvuyt51vb8t8M3OP9zNd+f7fKiYnzuraNVDBfklRXn8JAff4e4nuwt7Cr5ZQ3DSTCkNQFK2RcDflTQtomSNpUzasRQbE4MoFk4CUVxVicc2blAEjldSju3aqm0y/prKUiYUlCO6wEfEYFALyZJOrdZ4zEa7lIlEQAzJoVA4JIVBlsJ0npA01FjExZZbygg8irBIYFGwEQkKLypI4sJhaSvj3wwOMWyLunA8E82mq2TXOpNyvXOqmBBwXBqEidbEquN1sZrKqtrGNYFJsaJjPMRd7KbJ1FGFrYF/MzbTcOdtSNZbiadVFQhhAtHRHaYGVWLjyfyH9LNUQxAAY10LY02K8CH5vlBZbTtJ7N45D89iaKyedVXAcg03czdGKRuJHaC6Y6NaGqKm0u99NqWxaegGOKVMVXnsmaZ4VQPjj9fXO3aHoYHmIUXBkBCMSCJioi4QSiE4zYm2NGnDVns6iR3TMHEKO3hs39HgY6xP27jCtjTD45D4a223HCgImEoVUsRJVFGnOqvOiemul+Bkv9A4pWJoq1fj0aKm3TbLKzMkKS/+7PDuBRlXyG1N3C+NiLoEcgIAJFFVEUKM3zvruesk6pUqVl8f8HKBBM6wtAzt4KZMrAKrUnrTSXAMTQmKOi2dDqwWlnU2JOs6mxC1MIt0AB4gkVDlyP9YLq7rGIm0CxOSmT6RxUzPOqVYMbCuuHY7WI2ZFDDTPbONaUwnXaSUaXPdlBIIdHZ2cp1BznZaAwLPo8CWjRviahskMTPha9zdmTWyalGBriKG4tIESpkuKki6udXKRBuqqhuq4uuaG+vWV9WOi3lKZtHp1n9AGlftFNTbpqFmZhbEoKPVY8fNlKczdBwH06SfnKASD+qDBOmd9X8P1ItBaBCcMjhPd5xqJwM2pq3MMzVnsw4Qip8zrA4qWdvJ+O9pDbXRpqACp2IXm3Yr5wDWbMvM5MRiLJWqSSbTLk6YUKPNMM2gMPXPGd4MQ1U+1kvZSkjaNL9qNl6+hRXDvBoUEIisKGgaj4HPCbcGHYYKzcYMw26lTTMnXJXQ8UDqSc96IgdcegQimizKrCbJMhvSBcwmEAqy4WBCS9Cruo5CudVzY+tMK2VtIJYTogrToN1v5v0Xr7OJC1pu0OgdcmaB8jrMeIOREQgsDksiGxIAsXIYJFaQZOFeIU8zTLp7/e0WHpj6Ko7mZX+oxzfA9/jepg9rXuJZtIp/alZBU2HBfIYYLnAEW1rC7uLofY0jRqtFH30OcO2QSWHDyZ/l2/bot2W3Jr3HD2/nH5l4kc8tQMWTnuf8Y7dnitDCpQtQBAkoiAReRNJWfvnt2UK0pHDx4OfFv7YsvzZ4K/JexdqeyyXH5jf9xC+YcPL5ivIKe3x5b1y8tP2FPr73s6ELLfg4s231zZGROY9/sLc3/92SwVeadpJ3nj5f2fjW8EAvI50/MKfF131ucefxN38/cnnFntmb6p69+eUp++oTD1/YFP4Kjp3c1bN/2cii4UEt/sfSbfmLRq7v3XkNPYf69hXOa97tf+lES+OyoVun++s6D9Se2O07efHVD5vaubJ91wfOVvu+uHrozCHcJCvJn62Bhf1l+8t/eTldRC4dXXrtYDF/WR0S532nrOjfsb6l70je60v6TpErPxx6Mfp+3cDB04udXcfX/vna2ZUfLbvxvPbpmbWrhZGPixe13zhSO9R//ZMAfM8eLeN+vPGqdm74a3JCW73fHS7Zw/Re8Y2W8S9LNhvtKREAAA==',
+            refresh_token: 'v7.1#i7#f^0#p^3#r7#I^3#t^Ul4xMF8wOkJFNDYxN0FFQzQxMjMxRDZCRkQ3RTNCNTQwMzFDNDM5XzJfMSNFXjEyODQ='
+        };
+        var response = await eBay.user.refreshUserToken(options);
+        console.log('refreshedToken ', response);
+    } catch (error) {
+        console.log('error ', error);
+    }    
+```
+
+#### Retrieve User Token
+```
+    var token = {};
+    try {
+        var options = {
+            redirectURI: 'Bhushankumar_L-Bhushank-DemoAp-onqph',
+            code: 'v^1.1#i^1#f^0#r^1#p^3#I^3#t^Ul41Xzg6QTgwNEM4REE5RDUwODMyNzgyNjJFNUVBRTk1OTQ3QzlfMl8xI0VeMTI4NA=='
+        };
+        token = await eBay.user.retrieveUserToken(options);
+        console.log('response ', token);
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }
+    console.log('user token ', token.access_token);
+    eBay.setUserToken(token.access_token);
+    var data = {
+        q: 'drone'
+    };
+    try {
+        var response = await eBay.catalog.search(data);
+        console.log('response', response);
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }    
+```
+
