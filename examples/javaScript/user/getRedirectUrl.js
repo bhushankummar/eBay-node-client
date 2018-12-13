@@ -11,10 +11,10 @@ var userRequest = async function () {
 
         var options = {
             scope: DEFAULT_SCOPE_SANDBOX,
-            redirectURI: 'Bhushankumar_Li-Bhushank-HILine-nuhoilf'
+            redirectURI: 'Bhushankumar_L-Bhushank-DemoAp-onqph'
         };
         var response = await eBay.user.getRedirectUrl(options);
-        console.log('redirectUrl ', response.redirectUrl);
+        console.log('redirectUrl ', response);
     } catch (error) {
         console.log('error ', error);
     }
