@@ -10,7 +10,7 @@ var utils = require('../../javaScript/utils');
 var inventoryRequest = async function () {
     var userToken = utils.USER_TOKEN;
     eBay.setUserToken(userToken);
-    var content = fse.readFileSync('./sample.xml', 'UTF-8');
+    var content = fse.readFileSync('./sample.txt', 'UTF-8');
     // console.log('content', content);
 
     try {

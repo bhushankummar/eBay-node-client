@@ -10,11 +10,12 @@ var utils = require('../../javaScript/utils');
 var inventoryRequest = async function () {
     var userToken = utils.USER_TOKEN;
     eBay.setUserToken(userToken);
+    eBay.setAppName('Bhushank-HILine-SBX-591c54ee4-26cd6ca3');
     var content = fse.readFileSync('./sample.xml', 'UTF-8');
     // console.log('content', content);
 
     try {
-        var response = await eBay.trading.addItem({content: content});
+        var response = await eBay.finding.findItemsByProduct({content: content});
         console.log('response', response);
         console.log('response', JSON.stringify(response));
     } catch (error) {
