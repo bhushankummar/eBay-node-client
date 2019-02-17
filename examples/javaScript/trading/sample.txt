@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AddItemRequest xmlns="urn:ebay:apis:eBLBaseComponents">
+  <RequesterCredentials>
+  <!-- Enter proper authentication token for account -->
+    <eBayAuthToken>AgAAAA**AQAAAA**aAAAAA**KklpXA**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6wFk4ajC5iFpA2dj6x9nY+seQ**SLgEAA**AAMAAA**p0AS+8vv088NtpFvG5VTv9yCvI9cCKdQhru0LTJ0C3SWDQmEVYXiXjSMZc5r8xx1PsXHZP/SIQie4omWYQPJilhRNPbO6z0GH/kn184p8Fedx6VSgTLsJiskkOAs36f3KMuQuz2iRgTcsNLPw2hP3X70DcI2PjSdV3zsfOVjLxpQ8+Oe53ModvnCmdjOt7HUu4OUTugxhMTeDQ9TlZPUjHhyX3DSId0epD3GI5r44ygmAmPkoYQH9C+TAdj2KIg0OcwbRmcjl8wO1PyJ51oS2CicGL16c70+Cm738NU+6L3iGd7CQk2YxFIrrxPYBnrhRofm78BoSgVAhWDzpTiSnNsXrIqJgpEjmXcq5CoglYe6KHq3BXa6cT/Dl9cbLzZ4zoMbQn29L9UWvodkdUYvxE67zEpV2hPo/RWvot5TZId781ZYdO2i0fbuHljho/UGVTTOA5nSa7iWEUqVrBLePsVYmHBCK8/jnKZJAu4lmKXsM0/XtmWGYcEsuV9mdMxczZ9z5x9Rxz9vECg8myf/NAuxup3ipYEvkvKuhD6wIMXkBZNLeo1v7iPN4FAzhWCsrWIQ9Ctbvp0HFRDCeHxv/tKidPlTteJADi+hJy2oK7OUHsALr2Qp8HAk9CfQHPMgqymYqkypd4pAnrRl1NbfkeqIT0vcEQw/9rrk1vuMLG78jIzyBIKuC4rJUh8kz1d6ZS9jvWoZ7z8z979WtHnNSl9KTnhfkdN11qb+hBIirJdrGjteMHE20u/2/LYuezAg</eBayAuthToken>
+  </RequesterCredentials>
+	<ErrorLanguage>en_US</ErrorLanguage>
+	<WarningLevel>High</WarningLevel>
+  <Item>
+    <Title>Harry Potter and the Philosopher's Stone</Title>
+    <Description>This is the first book in the Harry Potter series. In excellent condition!</Description>
+    <PrimaryCategory>
+      <CategoryID>377</CategoryID>
+    </PrimaryCategory>
+    <StartPrice>1.0</StartPrice>
+    <CategoryMappingAllowed>true</CategoryMappingAllowed>
+    <Country>US</Country>
+    <Currency>USD</Currency>
+    <ConditionID>1000</ConditionID>
+    <DispatchTimeMax>3</DispatchTimeMax>
+    <ListingDuration>Days_7</ListingDuration>
+    <ListingType>Chinese</ListingType>
+    <PaymentMethods>PayPal</PaymentMethods>
+    <!--Enter your Paypal email address-->
+    <PayPalEmailAddress>XXXXX</PayPalEmailAddress>
+    <PictureDetails>
+      <PictureURL>https://mypicserver.com/myphoto.jpg</PictureURL>
+    </PictureDetails>
+    <PostalCode>95125</PostalCode>
+    <Quantity>1</Quantity>
+    <ReturnPolicy>
+      <ReturnsAcceptedOption>ReturnsAccepted</ReturnsAcceptedOption>
+      <RefundOption>MoneyBack</RefundOption>
+      <ReturnsWithinOption>Days_30</ReturnsWithinOption>
+      <ShippingCostPaidByOption>Buyer</ShippingCostPaidByOption>
+    </ReturnPolicy>
+    <ShippingDetails>
+      <ShippingType>Flat</ShippingType>
+      <ShippingServiceOptions>
+        <ShippingServicePriority>1</ShippingServicePriority>
+        <ShippingService>USPSMedia</ShippingService>
+        <ShippingServiceCost>2.50</ShippingServiceCost>
+      </ShippingServiceOptions>
+    </ShippingDetails>
+    <Site>US</Site>
+      <!-- If the seller is subscribed to Business Policies, use the <SellerProfiles> Container
+		     instead of the <ShippingDetails>, <PaymentMethods> and <ReturnPolicy> containers.
+         For help, see the API Reference for Business Policies:
+		     http://developer.ebay.com/Devzone/business-policies/CallRef/index.html -->
+       <!--<SellerProfiles>
+      		<SellerShippingProfile>
+       			 <ShippingProfileID>5001287000</ShippingProfileID>
+    		  	</SellerShippingProfile>
+      		<SellerReturnProfile>
+        			<ReturnProfileID>5001288000</ReturnProfileID>
+      		</SellerReturnProfile>
+      		<SellerPaymentProfile>
+        			<PaymentProfileID>5001286000</PaymentProfileID>
+      		</SellerPaymentProfile>
+    </SellerProfiles> -->
+ </Item>
+</AddItemRequest>
