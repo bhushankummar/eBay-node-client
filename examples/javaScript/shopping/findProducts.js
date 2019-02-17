@@ -16,7 +16,7 @@ var inventoryRequest = async function () {
     // console.log('content', content);
 
     try {
-        var response = await eBay.finding.findItemsByProduct({content: content});
+        var response = await eBay.shopping.findProducts({content: content});
         console.log('response', response);
         console.log('response', JSON.stringify(response));
     } catch (error) {
