@@ -14,7 +14,7 @@ var inventoryRequest = async function () {
     // console.log('content', content);
 
     try {
-        var response = await eBay.trading.addItem({content: content});
+        var response = await eBay.trading.addItem({ content: content });
         console.log('response', response);
         console.log('response', JSON.stringify(response));
     } catch (error) {
