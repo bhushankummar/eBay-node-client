@@ -118,6 +118,24 @@ declare class User extends BaseClient {
     refreshUserToken(params: any): Promise<any>;
 }
 
+declare class Trading extends BaseClient {
+
+    addDispute(params: any): Promise<any>;
+
+}
+
+declare class Finding extends BaseClient {
+
+    findCompletedItems(params: any): Promise<any>;
+
+}
+
+declare class Shopping extends BaseClient {
+
+    getCategoryInfo(params: any): Promise<any>;
+
+}
+
 declare class eBayNodeClient {
 
     account: Account;
@@ -137,6 +155,12 @@ declare class eBayNodeClient {
     taxonomy: Taxonomy;
 
     user: User;
+
+    trading: Trading;
+
+    finding: Finding;
+
+    shopping: Shopping;
 
     constructor()
 
