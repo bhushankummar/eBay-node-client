@@ -476,6 +476,10 @@ declare class eBayNodeClient {
 
     setHost(host?: string, port?: string, protocol?: string): void;
 
+    setPort(port?: string): void;
+
+    setProtocol(protocol?: string): void;
+
     setToken(applicationToken: string): void;
 
     setUserToken(userToken: string): void;
