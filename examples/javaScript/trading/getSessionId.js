@@ -1,0 +1,44 @@
+'use strict';
+
+var clientId = process.env.EBAY_CLIENT_ID || 'YOUR_KEY';
+var clientSecret = process.env.EBAY_CLIENT_SECRET || 'YOUR_SECRET';
+var fse = require('fs-extra');
+var js2xmlparser = require('js2xmlparser');
+
+var eBay = require('../../../lib/eBay-node-client')(clientId, clientSecret);
+var utils = require('../utils');
+
+var tradingRequest = async function () {
+    var userToken = utils.USER_TOKEN;
+    eBay.setUserToken(userToken);
+    eBay.setPort('443');
+    eBay.setProtocol('https');
+
+    eBay.setAppName('');
+    eBay.setDevName('');
+    eBay.setCertName('');
+
+    const obj = {
+        '@': {
+            'xmlns': 'urn:ebay:apis:eBLBaseComponents'
+        },
+        'ErrorLanguage': 'en_US',
+        'WarningLevel': 'High',
+        'RuName': ''
+    }
+
+
+    var content = js2xmlparser.parse('GetSessionIDRequest', obj, {declaration: {encoding: 'UTF-8'}});
+    console.log('content', content)
+
+    try {
+        var response = await eBay.trading.getSessionID({content: content});
+        console.log('response', response);
+        console.log('response', JSON.stringify(response));
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }
+};
+
+tradingRequest();

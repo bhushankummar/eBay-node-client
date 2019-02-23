@@ -483,6 +483,12 @@ declare class eBayNodeClient {
     setToken(applicationToken: string): void;
 
     setUserToken(userToken: string): void;
+
+    setAppName(appName: string): void;
+
+    setDevName(devName: string): void;
+
+    setCertName(certName: string): void;
 }
 
 

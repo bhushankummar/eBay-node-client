@@ -7,7 +7,7 @@ var fse = require('fs-extra');
 var eBay = require('../../../lib/eBay-node-client')(clientId, clientSecret);
 var utils = require('../../javaScript/utils');
 
-var inventoryRequest = async function () {
+var tradingRequest = async function () {
     var userToken = utils.USER_TOKEN;
     eBay.setUserToken(userToken);
     var content = fse.readFileSync('./sample.txt', 'UTF-8');
@@ -23,4 +23,4 @@ var inventoryRequest = async function () {
     }
 };
 
-inventoryRequest();
+tradingRequest();
