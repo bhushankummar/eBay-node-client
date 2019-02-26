@@ -31,9 +31,14 @@ export DEBUG=eBay:*
 ```
 
 ## Usage
-```bash
+```
 export EBAY_CLIENT_ID=KEY
 export EBAY_CLIENT_SECRET=SECRET
+```
+
+## Additional Parameters based on different API Call
+```
+export EBAY_DEV_ID=DEV_ID
 ```
 
 ## To Enable Sandbox Purpose

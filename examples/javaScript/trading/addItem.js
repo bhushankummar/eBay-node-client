@@ -8,12 +8,10 @@ var eBay = require('../../../lib/eBay-node-client')(clientId, clientSecret);
 var utils = require('../../javaScript/utils');
 
 var tradingRequest = async function () {
-    var userToken = utils.USER_TOKEN;
-    eBay.setUserToken(userToken);
-    var content = fse.readFileSync('./sample.xml', 'UTF-8');
-    // console.log('content', content);
-
     try {
+        var content = fse.readFileSync('./sample.xml', 'UTF-8');
+        // console.log('content', content);
+
         var response = await eBay.trading.addItem({ content: content });
         console.log('response', response);
         console.log('response', JSON.stringify(response));

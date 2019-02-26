@@ -9,14 +9,10 @@ var eBay = require('../../../lib/eBay-node-client')(clientId, clientSecret);
 var utils = require('../utils');
 
 var tradingRequest = async function () {
-    var userToken = utils.USER_TOKEN;
-    eBay.setUserToken(userToken);
-    eBay.setPort('443');
-    eBay.setProtocol('https');
+    var devId = utils.DEV_ID;
+    var ruName = utils.RU_NAME;
 
-    eBay.setAppName('');
-    eBay.setDevName('');
-    eBay.setCertName('');
+    eBay.setDevName(devId);
 
     const obj = {
         '@': {
@@ -24,17 +20,14 @@ var tradingRequest = async function () {
         },
         'ErrorLanguage': 'en_US',
         'WarningLevel': 'High',
-        'RuName': ''
-    }
-
+        'RuName': ruName
+    };
 
     var content = js2xmlparser.parse('GetSessionIDRequest', obj, {declaration: {encoding: 'UTF-8'}});
-    console.log('content', content)
 
     try {
         var response = await eBay.trading.getSessionID({content: content});
         console.log('response', response);
-        console.log('response', JSON.stringify(response));
     } catch (error) {
         console.log('error ', error);
         return;
