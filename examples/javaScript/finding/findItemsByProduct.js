@@ -6,7 +6,7 @@ var fse = require('fs-extra');
 
 var eBay = require('../../../lib/eBay-node-client')(clientId, clientSecret);
 
-var inventoryRequest = async function () {
+var findingRequest = async function () {
     try {
         var content = fse.readFileSync('./sample.xml', 'UTF-8');
 
@@ -18,4 +18,4 @@ var inventoryRequest = async function () {
     }
 };
 
-inventoryRequest();
+findingRequest();
