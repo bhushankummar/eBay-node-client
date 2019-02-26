@@ -5,7 +5,6 @@ var clientSecret = process.env.EBAY_CLIENT_SECRET || 'YOUR_SECRET';
 var fse = require('fs-extra');
 
 var eBay = require('../../../lib/eBay-node-client')(clientId, clientSecret);
-var utils = require('../../javaScript/utils');
 
 var tradingRequest = async function () {
     try {

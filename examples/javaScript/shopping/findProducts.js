@@ -5,16 +5,11 @@ var clientSecret = process.env.EBAY_CLIENT_SECRET || 'YOUR_SECRET';
 var fse = require('fs-extra');
 
 var eBay = require('../../../lib/eBay-node-client')(clientId, clientSecret);
-var utils = require('../../javaScript/utils');
 
 var shoppingRequest = async function () {
-    var userToken = utils.USER_TOKEN;
-    eBay.setUserToken(userToken);
-    // eBay.setAppName(appName);
-
     try {
         var content = fse.readFileSync('./sample.xml', 'UTF-8');
-        console.log('content', content);
+        // console.log('content', content);
 
         var response = await eBay.shopping.findProducts({content: content});
         console.log('response', response);

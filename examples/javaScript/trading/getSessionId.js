@@ -2,7 +2,6 @@
 
 var clientId = process.env.EBAY_CLIENT_ID || 'YOUR_KEY';
 var clientSecret = process.env.EBAY_CLIENT_SECRET || 'YOUR_SECRET';
-var fse = require('fs-extra');
 var js2xmlparser = require('js2xmlparser');
 
 var eBay = require('../../../lib/eBay-node-client')(clientId, clientSecret);
