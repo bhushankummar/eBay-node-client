@@ -9,11 +9,11 @@ var utils = require('../../../javaScript/utils');
 var inventoryRequest = async function () {
     var userToken = utils.USER_TOKEN;
     eBay.setUserToken(userToken);
-    var data = {
-        limit: '10'
-    };
+    // keep those as string, otherwise will have error for offset = 0
+    var offset = '0';
+    var limit = '10';
     try {
-        var response = await eBay.inventory.getInventoryItems(data);
+        var response = await eBay.inventory.getInventoryItems(offset, limit);
         console.log('response', response);
     } catch (error) {
         console.log('error ', error);
