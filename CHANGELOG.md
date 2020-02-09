@@ -1,3 +1,6 @@
+0.0.9
+  - Add support for trading APIs, shopping APIs & Finding APIs
+
 0.0.8 December 13, 2018
   - Add Support for eBay User Token : Get Redirect URL, Retrieve User Token & Refresh User Token
 
