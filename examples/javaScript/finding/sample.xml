@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<findItemsByProductRequest xmlns="http://www.ebay.com/marketplace/search/v1/services">
+    <productId type="ReferenceID">53039031</productId>
+    <paginationInput>
+        <entriesPerPage>2</entriesPerPage>
+    </paginationInput>
+</findItemsByProductRequest>

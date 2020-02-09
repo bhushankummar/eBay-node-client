@@ -1,6 +1,6 @@
 {
   "name": "ebay-node-client",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "eBay API wrapper",
   "keywords": [
     "eBay",

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FindProductsRequest xmlns="urn:ebay:apis:eBLBaseComponents">
+    <QueryKeywords>Harry Potter</QueryKeywords>
+    <MaxEntries>2</MaxEntries>
+    <AvailableItemsOnly>true</AvailableItemsOnly>
+</FindProductsRequest>

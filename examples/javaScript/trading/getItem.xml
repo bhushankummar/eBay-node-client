@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GetItemRequest xmlns="urn:ebay:apis:eBLBaseComponents">
+    <!-- Call-specific Input Fields -->
+    <IncludeItemCompatibilityList>true</IncludeItemCompatibilityList>
+    <IncludeItemSpecifics>true</IncludeItemSpecifics>
+    <IncludeTaxTable>true</IncludeTaxTable>
+    <IncludeWatchCount>true</IncludeWatchCount>
+    <ItemID>SKU</ItemID>
+    <SKU>my-sku</SKU>
+    <!-- Standard Input Fields -->
+    <DetailLevel>DetailLevelCodeType</DetailLevel>
+    <!-- ... more DetailLevel values allowed here ... -->
+    <ErrorLanguage>en_US</ErrorLanguage>
+    <WarningLevel>High</WarningLevel>
+</GetItemRequest>
