@@ -1,6 +1,6 @@
 {
   "name": "ebay-node-client",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "eBay API wrapper",
   "keywords": [
     "eBay",
@@ -8,6 +8,8 @@
     "eBay Inventory API",
     "eBay Compliance API",
     "eBay Fulfillment API",
+    "eBay Payment Policy API",
+    "eBay Return Policy API",
     "eBay Marketing API",
     "eBay Analytics API",
     "eBay Metadata API",

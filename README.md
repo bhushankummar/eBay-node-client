@@ -59,6 +59,21 @@ const eBay = new eBay();
 eBay.setApiKey('YOUR_KEY', 'YOUR_SECRET');
 ```
 
+## Set Application Access Token
+```js
+    eBay.setToken(token.access_token);
+```
+
+## Set User Token
+```js
+    eBay.setUserToken(userToken);
+```
+
+## Set Content Language (Default is en-US)
+```js
+    eBay.setContentLanguage('en-GB');
+```
+
 ## Pull Request
 - Contributors can send their Pull Request to `development` branch.
 - Kindly validate test cases & linting before opening new PR.

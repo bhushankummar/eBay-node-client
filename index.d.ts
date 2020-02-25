@@ -489,6 +489,8 @@ declare class eBayNodeClient {
     setDevName(devName: string): void;
 
     setCertName(certName: string): void;
+    
+    setContentLanguage(contentLanguage: string): void;
 }
 
 
