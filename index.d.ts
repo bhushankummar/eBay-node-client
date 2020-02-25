@@ -25,6 +25,8 @@ declare class Application extends BaseClient {
 declare class Browse extends BaseClient {
 
     search(params: any): Promise<any>;
+    
+    searchByImage(imageBase64String: string): Promise<any>;
 
     getItem(itemId: string): Promise<any>;
 
@@ -489,7 +491,7 @@ declare class eBayNodeClient {
     setDevName(devName: string): void;
 
     setCertName(certName: string): void;
-    
+
     setContentLanguage(contentLanguage: string): void;
 }
 

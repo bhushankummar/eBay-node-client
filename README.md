@@ -74,6 +74,11 @@ eBay.setApiKey('YOUR_KEY', 'YOUR_SECRET');
     eBay.setContentLanguage('en-GB');
 ```
 
+## Set MarketplaceId
+```js
+    eBay.setMarketplaceId('EBAY_US');
+```
+
 ## Pull Request
 - Contributors can send their Pull Request to `development` branch.
 - Kindly validate test cases & linting before opening new PR.
