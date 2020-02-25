@@ -154,6 +154,24 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
     }    
 ```
 
+#### Search By Image
+```
+    var userToken = utils.USER_TOKEN;
+    eBay.setUserToken(userToken);
+    var base64Content = base64_encode('sample-image.jpg');
+    // console.log('base64Content ', base64Content);
+    var data = {
+        image: base64Content
+    };
+    try {
+        var response = await eBay.browse.searchByImage(data);
+        console.log('response', response);
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }    
+```
+
 ### Commerce
 ### Catalog
 #### Create Change Request
@@ -500,6 +518,23 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
     }    
 ```
 
+### Fulfillment Policy
+#### Get Fulfillment Policies
+```
+    var userToken = utils.USER_TOKEN;
+    eBay.setUserToken(userToken);
+    var data = {
+        marketplace_id: 'EBAY_US'
+    };
+    try {
+        var response = await eBay.fulfillmentPolicy.getFulfillmentPolicies(data);
+        console.log('response', response);
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }    
+```
+
 #### Get Sales Tax
 ```
     var userToken = utils.USER_TOKEN;
@@ -524,6 +559,40 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
     };
     try {
         var response = await eBay.account.getSalesTaxes(data);
+        console.log('response', response);
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }    
+```
+
+### Payment Policy
+#### Get Payment Policies
+```
+    var userToken = utils.USER_TOKEN;
+    eBay.setUserToken(userToken);
+    var data = {
+        marketplace_id: 'EBAY_US'
+    };
+    try {
+        var response = await eBay.paymentPolicy.getPaymentPolicies(data);
+        console.log('response', response);
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }    
+```
+
+### Return Policy
+#### Get Return Policies
+```
+    var userToken = utils.USER_TOKEN;
+    eBay.setUserToken(userToken);
+    var data = {
+        marketplace_id: 'EBAY_US'
+    };
+    try {
+        var response = await eBay.returnPolicy.getReturnPolicies(data);
         console.log('response', response);
     } catch (error) {
         console.log('error ', error);
