@@ -553,6 +553,29 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
     }    
 ```
 
+#### Bulk Create Or Replace Inventory Item
+```
+    var userToken = utils.USER_TOKEN;
+    eBay.setUserToken(userToken);
+    var data = {
+        'requests': [
+            {
+                'sku': '13465446'
+            },
+            {
+                'sku': '132165496'
+            }
+        ]
+    };
+    try {
+        var response = await eBay.inventory.bulkCreateOrReplaceInventoryItem(data);
+        console.log('response ', response);
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }    
+```
+
 #### Delete Inventory Item
 ```
     var userToken = utils.USER_TOKEN;
