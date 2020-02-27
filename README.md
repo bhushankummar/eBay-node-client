@@ -601,6 +601,63 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 ### Inventory
+#### Bulk Create Or Replace Inventory Item
+```
+    var userToken = utils.USER_TOKEN;
+    eBay.setUserToken(userToken);
+    var data = {
+        'requests': [
+            {
+                'sku': '13465446'
+            },
+            {
+                'sku': '132165496'
+            }
+        ]
+    };
+    try {
+        var response = await eBay.inventory.bulkCreateOrReplaceInventoryItem(data);
+        console.log('response ', response);
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }    
+```
+
+#### Bulk Update Price Quantity
+```
+    var userToken = utils.USER_TOKEN;
+    eBay.setUserToken(userToken);
+    var data = { /* BulkPriceQuantity */
+        'requests': [
+            { /* PriceQuantity */
+                'offers': [
+                    { /* OfferPriceQuantity */
+                        'availableQuantity': 'integer',
+                        'offerId': 'string',
+                        'price': { /* Amount */
+                            'currency': 'string',
+                            'value': 'string'
+                        }
+                    }
+                ],
+                'shipToLocationAvailability': {
+                    /* ShipToLocationAvailability */
+                    'quantity': 'integer'
+                },
+                'sku': 'string'
+            }
+        ]
+    }
+    try {
+        var response = await eBay.inventory.bulkUpdatePriceQuantity(sku, data);
+        console.log('response', response);
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }    
+```
+
 #### Create Or Replace Inventory Item
 ```
     var userToken = utils.USER_TOKEN;
@@ -636,29 +693,6 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
     try {
         var response = await eBay.inventory.createOrReplaceInventoryItem(sku, data);
         console.log('response', response);
-    } catch (error) {
-        console.log('error ', error);
-        return;
-    }    
-```
-
-#### Bulk Create Or Replace Inventory Item
-```
-    var userToken = utils.USER_TOKEN;
-    eBay.setUserToken(userToken);
-    var data = {
-        'requests': [
-            {
-                'sku': '13465446'
-            },
-            {
-                'sku': '132165496'
-            }
-        ]
-    };
-    try {
-        var response = await eBay.inventory.bulkCreateOrReplaceInventoryItem(data);
-        console.log('response ', response);
     } catch (error) {
         console.log('error ', error);
         return;
