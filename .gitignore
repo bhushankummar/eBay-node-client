@@ -65,3 +65,4 @@ typings/
 
 #Temp Directory
 temp/*
+.DS_Store

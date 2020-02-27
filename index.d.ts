@@ -26,6 +26,8 @@ declare class Browse extends BaseClient {
 
     search(params: any): Promise<any>;
 
+    searchByImage(imageBase64String: string): Promise<any>;
+
     getItem(itemId: string): Promise<any>;
 
 }
@@ -71,6 +73,12 @@ declare class Inventory extends BaseClient {
     getInventoryItems(params: any): Promise<any>;
 
     getBulkInventoryItem(params: any): Promise<any>;
+
+    bulkGetInventoryItem(params: any): Promise<any>;
+
+    bulkCreateOrReplaceInventoryItem(params: any): Promise<any>;
+
+    bulkUpdatePriceQuantity(params: any): Promise<any>;
 }
 
 declare class Location extends BaseClient {
@@ -489,6 +497,8 @@ declare class eBayNodeClient {
     setDevName(devName: string): void;
 
     setCertName(certName: string): void;
+
+    setContentLanguage(contentLanguage: string): void;
 }
 
 

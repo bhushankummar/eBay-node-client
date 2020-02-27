@@ -1,5 +1,5 @@
 node_modules
+node_modules/*
 .npm-debug.log
 tags
-package-lock.json
 .idea

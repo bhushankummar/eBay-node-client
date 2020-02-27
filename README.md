@@ -59,6 +59,26 @@ const eBay = new eBay();
 eBay.setApiKey('YOUR_KEY', 'YOUR_SECRET');
 ```
 
+## Set Application Access Token
+```js
+    eBay.setToken(token.access_token);
+```
+
+## Set User Token
+```js
+    eBay.setUserToken(userToken);
+```
+
+## Set Content Language (Default is en-US)
+```js
+    eBay.setContentLanguage('en-GB');
+```
+
+## Set MarketplaceId
+```js
+    eBay.setMarketplaceId('EBAY_US');
+```
+
 ## Pull Request
 - Contributors can send their Pull Request to `development` branch.
 - Kindly validate test cases & linting before opening new PR.
@@ -127,6 +147,24 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
     };
     try {
         var response = await eBay.browse.search(data);
+        console.log('response', response);
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }    
+```
+
+#### Search By Image
+```
+    var userToken = utils.USER_TOKEN;
+    eBay.setUserToken(userToken);
+    var base64Content = base64_encode('sample-image.jpg');
+    // console.log('base64Content ', base64Content);
+    var data = {
+        image: base64Content
+    };
+    try {
+        var response = await eBay.browse.searchByImage(data);
         console.log('response', response);
     } catch (error) {
         console.log('error ', error);
@@ -480,6 +518,23 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
     }    
 ```
 
+### Fulfillment Policy
+#### Get Fulfillment Policies
+```
+    var userToken = utils.USER_TOKEN;
+    eBay.setUserToken(userToken);
+    var data = {
+        marketplace_id: 'EBAY_US'
+    };
+    try {
+        var response = await eBay.fulfillmentPolicy.getFulfillmentPolicies(data);
+        console.log('response', response);
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }    
+```
+
 #### Get Sales Tax
 ```
     var userToken = utils.USER_TOKEN;
@@ -511,7 +566,98 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
     }    
 ```
 
+### Payment Policy
+#### Get Payment Policies
+```
+    var userToken = utils.USER_TOKEN;
+    eBay.setUserToken(userToken);
+    var data = {
+        marketplace_id: 'EBAY_US'
+    };
+    try {
+        var response = await eBay.paymentPolicy.getPaymentPolicies(data);
+        console.log('response', response);
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }    
+```
+
+### Return Policy
+#### Get Return Policies
+```
+    var userToken = utils.USER_TOKEN;
+    eBay.setUserToken(userToken);
+    var data = {
+        marketplace_id: 'EBAY_US'
+    };
+    try {
+        var response = await eBay.returnPolicy.getReturnPolicies(data);
+        console.log('response', response);
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }    
+```
+
 ### Inventory
+#### Bulk Create Or Replace Inventory Item
+```
+    var userToken = utils.USER_TOKEN;
+    eBay.setUserToken(userToken);
+    var data = {
+        'requests': [
+            {
+                'sku': '13465446'
+            },
+            {
+                'sku': '132165496'
+            }
+        ]
+    };
+    try {
+        var response = await eBay.inventory.bulkCreateOrReplaceInventoryItem(data);
+        console.log('response ', response);
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }    
+```
+
+#### Bulk Update Price Quantity
+```
+    var userToken = utils.USER_TOKEN;
+    eBay.setUserToken(userToken);
+    var data = { /* BulkPriceQuantity */
+        'requests': [
+            { /* PriceQuantity */
+                'offers': [
+                    { /* OfferPriceQuantity */
+                        'availableQuantity': 'integer',
+                        'offerId': 'string',
+                        'price': { /* Amount */
+                            'currency': 'string',
+                            'value': 'string'
+                        }
+                    }
+                ],
+                'shipToLocationAvailability': {
+                    /* ShipToLocationAvailability */
+                    'quantity': 'integer'
+                },
+                'sku': 'string'
+            }
+        ]
+    }
+    try {
+        var response = await eBay.inventory.bulkUpdatePriceQuantity(sku, data);
+        console.log('response', response);
+    } catch (error) {
+        console.log('error ', error);
+        return;
+    }    
+```
+
 #### Create Or Replace Inventory Item
 ```
     var userToken = utils.USER_TOKEN;

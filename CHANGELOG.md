@@ -1,3 +1,13 @@
+0.0.10
+    - Add support for override content language 
+    - Add support for the fulfillment API
+    - Add support for override marketplace 
+    - Add support for the payment policy API
+    - Add support for the return policy API
+    - Add support for the searchByImage API
+    - Add example sample for the bulkCreateOrReplaceInventoryItem & bulkUpdatePriceQuantity;
+    - Add typescript support for the bulkCreateOrReplaceInventoryItem & bulkUpdatePriceQuantity;
+
 0.0.9
   - Add support for trading APIs, shopping APIs & Finding APIs
 
