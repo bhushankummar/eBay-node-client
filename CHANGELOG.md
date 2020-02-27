@@ -5,6 +5,8 @@
     - Add support for the payment policy API
     - Add support for the return policy API
     - Add support for the searchByImage API
+    - Add example sample for the bulkCreateOrReplaceInventoryItem & bulkUpdatePriceQuantity;
+    - Add typescript support for the bulkCreateOrReplaceInventoryItem & bulkUpdatePriceQuantity;
 
 0.0.9
   - Add support for trading APIs, shopping APIs & Finding APIs
