@@ -83,7 +83,7 @@ declare class Inventory extends BaseClient {
 
 declare class Location extends BaseClient {
 
-    createOrReplaceInventoryItem(merchantLocationKey: string): Promise<any>;
+    createInventoryLocation(merchantLocationKey: string, params: any): Promise<any>;
 
     deleteInventoryLocation(merchantLocationKey: string): Promise<any>;
 

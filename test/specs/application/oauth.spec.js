@@ -33,8 +33,7 @@ describe('Application', function () {
             expect(response).to.have.property('token_type').to.be.a('string');
         } catch (error) {
             console.log('error ', error);
-            expect(response).to.be.a(undefined);
+            expect(response).to.be.undefined;
         }
-
     });
 });
