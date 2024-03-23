@@ -8,6 +8,9 @@ You can testify API through [eBay API Explorer](https://developer.ebay.com/my/ap
 
 You can find [examples of JavaScript and TypeScript here](https://github.com/bhushankumarl/eBay-node-client/tree/master/examples). This will help you for faster implementation of eBay APIs.
 
+Are you in need of a developer? If so, please reach out here. [Submit your project request here.](https://goo.gl/forms/UofdG5GY5iHMoUWg2)
+Originally by [Bhushankummar - bhushan.lilapra@gmail.com](mailto:bhushan.lilapra@gmail.com).
+
 ##### It does supports EcmaScript 5, EcmaScript 6,  EcmaScript 8, TypeScript, async-await, Promises, Callback !
 ##### It does also supports for AWS Lambda like serverless cloud function call.
 ##### It supports pure JSON response.
