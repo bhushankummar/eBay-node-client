@@ -8,6 +8,9 @@ You can testify API through [eBay API Explorer](https://developer.ebay.com/my/ap
 
 You can find [examples of JavaScript and TypeScript here](https://github.com/bhushankumarl/eBay-node-client/tree/master/examples). This will help you for faster implementation of eBay APIs.
 
+
+## Do you need an expert?
+
 Are you in need of a developer? If so, please reach out here. [Submit your project request here.](https://goo.gl/forms/UofdG5GY5iHMoUWg2)
 Originally by [Bhushankummar - bhushan.lilapra@gmail.com](mailto:bhushan.lilapra@gmail.com).
 
@@ -85,10 +88,6 @@ eBay.setApiKey('YOUR_KEY', 'YOUR_SECRET');
 ## Pull Request
 - Contributors can send their Pull Request to `development` branch.
 - Kindly validate test cases & linting before opening new PR.
-
-## Do you need an expert?
-Are you finding a developer for your world-class product? If yes, please contact here. [Submit your project request here.](https://goo.gl/forms/UofdG5GY5iHMoUWg2)
-Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 
 ## Examples
 ### Application
